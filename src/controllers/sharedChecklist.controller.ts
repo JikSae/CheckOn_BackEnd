@@ -1,0 +1,52 @@
+import { Request, Response, NextFunction } from 'express';
+import SharedChecklistService from '../services/sharedChecklist.service.js';
+
+class SharedChecklistController {
+  private service = new SharedChecklistService();
+
+  getAllSharedChecklists = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { sort = 'likes' } = req.query as { sort?: string };
+      const result = await this.service.getAllSharedChecklists(sort);
+      return res.status(200).json(result);
+    } catch (error) {
+      next(new Error("ShareChecklistError"));
+    }
+  };
+
+  getSharedChecklistById = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { checklistId } = req.params;
+      const result = await this.service.getSharedChecklistById(Number(checklistId));
+      return res.status(200).json(result);
+    } catch (error) {
+      next(new Error("ChecklistNotFound"));
+    }
+  };
+
+  shareChecklist = async (req: Request, res: Response, next: NextFunction) => {
+    const user = { userId: 7, authority: 'USER' }; // 테스트용
+    const checklistId = 4;
+
+    try {
+      await this.service.shareChecklist(checklistId, user);
+      return res.status(200).json({ message: '체크리스트가 공유되었습니다.' });
+    } catch (error) {
+      next(new Error("FailShared"));
+    }
+  };
+
+  unshareChecklist = async (req: Request, res: Response, next: NextFunction) => {
+    const user = { userId: 7, authority: 'USER' }; // 테스트용
+    const checklistId = 4;
+
+    try {
+      await this.service.unshareChecklist(checklistId, user);
+      return res.status(200).json({ message: '체크리스트 공유가 해제되었습니다.' });
+    } catch (error) {
+      next(new Error("FailUnshared"));
+    }
+  };
+}
+
+export default new SharedChecklistController();
