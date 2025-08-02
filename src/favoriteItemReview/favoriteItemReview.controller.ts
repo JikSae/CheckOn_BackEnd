@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { FavoriteItemReviewService } from '../services/favoriteItemReview.service.js';
+import { FavoriteItemReviewService } from './favoriteItemReview.service.js';
 
 class FavoriteItemReviewController {
   private service = new FavoriteItemReviewService();

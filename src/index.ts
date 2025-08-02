@@ -1,8 +1,8 @@
 import express, { Express } from "express";
 import cors from "cors";
-import itemReviewRouter from './routers/itemReview.Router.js';
-import favoriteItemReviewRouter from './routers/favoriteItemReview.Router.js';
-import sharedChecklistRouter from './routers/sharedChecklist.Router.js';
+import itemReviewRouter from './itemReview/itemReview.router.js';
+import favoriteItemReviewRouter from './favoriteItemReview/favoriteItemReview.router.js';
+import sharedChecklistRouter from './sharedChecklist/sharedChecklist.router.js';
 import { errorHandler } from './middlewares/error-handling.js';
 
 const app: Express = express();

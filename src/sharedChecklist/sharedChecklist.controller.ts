@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import SharedChecklistService from '../services/sharedChecklist.service.js';
+import SharedChecklistService from './sharedChecklist.service.js';
 
 class SharedChecklistController {
   private service = new SharedChecklistService();

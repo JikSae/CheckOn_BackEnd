@@ -1,5 +1,5 @@
 import express from 'express';
-import favoriteItemReviewController from '../controllers/favoriteItemReview.Controller.js';
+import favoriteItemReviewController from './favoriteItemReview.controller.js';
 
 const router = express.Router();
 

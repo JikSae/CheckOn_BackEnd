@@ -19,3 +19,13 @@ export interface UpdateItemReviewInput {
   itemId?: number;
   image?: string | null;
 }
+
+// src/types/index.ts
+export interface JWTPayload {
+  userId: number;
+  authority: 'USER' | 'ADMIN';
+}
+
+export interface AuthRequest extends Request {
+  user?: JWTPayload;
+}

@@ -1,5 +1,5 @@
 import express, { Router } from 'express';
-import itemReviewController from '../controllers/itemReview.controller.js';
+import itemReviewController from './itemReview.controller.js';
 import { uploadItemImage } from "../middlewares/uploadMiddleware.js";
 const router: Router = express.Router();
 

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { ItemReviewService } from '../services/itemReview.service.js';
+import { ItemReviewService } from './itemReview.service.js';
 import type { ReviewQuery } from '../types/itemReview.js'; 
 
 class ItemReviewController {

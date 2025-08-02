@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import prisma from '../lib/prisma.js';
-import * as sharedChecklistService from '../services/sharedChecklist.service.js';
-import * as favoriteItemReviewService from '../services/favoriteItemReview.service.js';  
-import * as itemReviewService from '../services/itemReview.service.js';  
+import * as sharedChecklistService from '../sharedChecklist/sharedChecklist.service.js';
+import * as favoriteItemReviewService from '../favoriteItemReview/favoriteItemReview.service.js';  
+import * as itemReviewService from '../itemReview/itemReview.service.js';  
 
 export const errorHandler = (
   err: any,

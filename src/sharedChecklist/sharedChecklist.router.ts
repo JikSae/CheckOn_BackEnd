@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import sharedChecklistController from '../controllers/sharedChecklist.controller.js';
+import sharedChecklistController from './sharedChecklist.controller.js';
 
 const router = Router();
 
