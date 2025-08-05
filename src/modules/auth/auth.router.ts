@@ -34,20 +34,20 @@ router.post("/sign-out", asyncHandler(authController.signOut));
 // 본인 확인
 router.get("/me", authenticateToken, asyncHandler(authController.isLogged));
 
-// // 이메일 찾기
-// router.post(
-//   "/find-id",
-//   findIdValidation,
-//   handleValidationResult,
-//   asyncHandler(authController.findId)
-// );
+// 이메일 찾기
+router.post(
+  "/find-id",
+  findIdValidation,
+  handleValidationResult,
+  asyncHandler(authController.findId)
+);
 
-// // 비밀번호 재설정
-// router.post(
-//   "/reset-password",
-//   resetPasswordValidation,
-//   handleValidationResult,
-//   asyncHandler(authController.resetPassword)
-// );
+// 비밀번호 재설정
+router.post(
+  "/reset-password",
+  resetPasswordValidation,
+  handleValidationResult,
+  asyncHandler(authController.resetPassword)
+);
 
 export default router;
